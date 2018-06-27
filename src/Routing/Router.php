@@ -10,9 +10,9 @@ class Router extends IlluminateRouter
     /**
      * Route an API resource to a controller.
      *
-     * @param  string $name
-     * @param  string $controller
-     * @param  array $options
+     * @param string $name
+     * @param string $controller
+     * @param array  $options
      *
      * @return \Illuminate\Routing\PendingResourceRegistration
      */
@@ -32,9 +32,9 @@ class Router extends IlluminateRouter
     /**
      * Route a resource to a controller.
      *
-     * @param  string $name
-     * @param  string $controller
-     * @param  array $options
+     * @param string $name
+     * @param string $controller
+     * @param array  $options
      *
      * @return \Illuminate\Routing\PendingResourceRegistration
      */
@@ -42,8 +42,7 @@ class Router extends IlluminateRouter
     {
         if ($this->container && $this->container->bound(ResourceRegistrar::class)) {
             $registrar = $this->container->make(ResourceRegistrar::class);
-        }
-        else {
+        } else {
             $registrar = new ResourceRegistrar($this);
         }
 
