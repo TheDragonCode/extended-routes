@@ -1,6 +1,6 @@
 {
     "name": "andrey-helldar/extended-resource-router",
-    "description": "Expansion of the functional of the Laravel resources routes",
+    "description": "This helper extends the standard set of resource routing methods to work with SoftDeletes",
     "type": "library",
     "license": "MIT",
     "homepage": "https://github.com/andrey-helldar/extended-resource-router",
