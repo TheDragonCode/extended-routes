@@ -43,6 +43,7 @@ Alright! Use `app('ext_router')` instance.
 
 ```php
 app('ext_router')->apiResource('cars', 'CarsController');
+
 // or
 
 use Helldar\ExtendedResourceRouter\Routing\Router;
