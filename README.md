@@ -5,7 +5,7 @@ This helper extends the standard set of resource routing methods to work with So
 ![extended-resource-router](https://user-images.githubusercontent.com/10347617/41983183-003ce8e0-7a36-11e8-9ef4-a3c587e6ec10.png)
 
 <p align="center">
-    <a href="https://styleci.io/repos/82566268"><img src="https://styleci.io/repos/82566268/shield" alt="StyleCI" /></a>
+    <a href="https://styleci.io/repos/138897572"><img src="https://styleci.io/repos/138897572/shield" alt="StyleCI" /></a>
     <a href="https://packagist.org/packages/andrey-helldar/extended-resource-router"><img src="https://img.shields.io/packagist/dt/andrey-helldar/extended-resource-router.svg?style=flat-square" alt="Total Downloads" /></a>
     <a href="https://packagist.org/packages/andrey-helldar/extended-resource-router"><img src="https://poser.pugx.org/andrey-helldar/extended-resource-router/v/stable?format=flat-square" alt="Latest Stable Version" /></a>
     <a href="https://packagist.org/packages/andrey-helldar/extended-resource-router"><img src="https://poser.pugx.org/andrey-helldar/extended-resource-router/v/unstable?format=flat-square" alt="Latest Unstable Version" /></a>
