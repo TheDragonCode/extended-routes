@@ -16,10 +16,10 @@ class ResourceRegistrar extends IlluminateResourceRegistrar
     /**
      * Add the index method for a resourceful route.
      *
-     * @param  string $name
-     * @param  string $base
-     * @param  string $controller
-     * @param  array $options
+     * @param string $name
+     * @param string $base
+     * @param string $controller
+     * @param array  $options
      *
      * @return \Illuminate\Routing\Route
      */
@@ -35,10 +35,10 @@ class ResourceRegistrar extends IlluminateResourceRegistrar
     /**
      * Add the destroy method for a resourceful route.
      *
-     * @param  string $name
-     * @param  string $base
-     * @param  string $controller
-     * @param  array $options
+     * @param string $name
+     * @param string $base
+     * @param string $controller
+     * @param array  $options
      *
      * @return \Illuminate\Routing\Route
      */
