@@ -2,7 +2,7 @@
 
 This helper extends the standard set of resource routing methods to work with SoftDeletes and other extends.
 
-![extended routes](https://user-images.githubusercontent.com/10347617/42021379-1da20efa-7ac3-11e8-8f99-72e6728029fe.png)
+![extended routes](https://user-images.githubusercontent.com/10347617/42057776-0d4ad46a-7b27-11e8-88c9-36248498818c.png)
 
 <p align="center">
     <a href="https://styleci.io/repos/138897572"><img src="https://styleci.io/repos/138897572/shield" alt="StyleCI" /></a>
@@ -45,7 +45,8 @@ use Helldar\ExtendedRoutes\Routing\ModelBindingResolver;
 
 public function resolveRouteBinding($value)
 {
-    return (new ModelBindingResolver($this))->resolve($value);
+    return (new ModelBindingResolver($this))
+        ->resolve($value);
 }
 ```
 
