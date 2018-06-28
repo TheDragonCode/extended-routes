@@ -45,7 +45,7 @@
                 "Helldar\\ExtendedResourceRouter\\ServiceProvider"
             ],
             "aliases": {
-                "ExtendedRouter": "Helldar\\ExtendedResourceRouter\\Facade"
+                "ExtRouter": "Helldar\\ExtendedResourceRouter\\Facade"
             }
         }
     }
