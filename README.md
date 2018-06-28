@@ -86,5 +86,5 @@ Route::apiRestorableResource('foos', 'FoosController');
 
 This package licensed under [The MIT License](LICENSE).
 
-The package code was written with the participation of [Maksim (Ellrion) Platonov](https://gist.github.com/Ellrion/d04a75bf2df10d8e46eccd44be068dda).
+The package code was written with the participation of [Maksim (Ellrion) Platonov](https://github.com/Ellrion/).
 
