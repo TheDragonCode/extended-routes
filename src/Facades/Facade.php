@@ -2,7 +2,7 @@
 
 namespace Helldar\ExtendedRoutes\Facades;
 
-class Facade
+class Facade extends \Illuminate\Support\Facades\Facade
 {
     /**
      * {@inheritdoc}
