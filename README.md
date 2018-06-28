@@ -43,13 +43,7 @@ app('ext_router')->apiResource('cars', 'CarsController');
 
 // or
 
-use Helldar\ExtendedResourceRouter\Routing\Router;
-
-Router::apiResource('cars', 'CarsController');
-
-// or using facade
-
-ExtendedRouter::apiResource('cars', 'CarsController');
+ExtRouter::apiResource('cars', 'CarsController');
 ```
 
 The following routes will be registered:
