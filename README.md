@@ -2,7 +2,7 @@
 
 This helper extends the standard set of resource routing methods to work with SoftDeletes and other extends.
 
-![extended-routes](https://user-images.githubusercontent.com/10347617/41983183-003ce8e0-7a36-11e8-9ef4-a3c587e6ec10.png)
+![extended routes](https://user-images.githubusercontent.com/10347617/42021379-1da20efa-7ac3-11e8-8f99-72e6728029fe.png)
 
 <p align="center">
     <a href="https://styleci.io/repos/138897572"><img src="https://styleci.io/repos/138897572/shield" alt="StyleCI" /></a>
