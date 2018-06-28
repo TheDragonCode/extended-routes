@@ -2,7 +2,8 @@
 
 namespace Helldar\ExtendedRoutes;
 
-use Helldar\ExtendedRoutes\Routing\Router;
+use Helldar\ExtendedRoutes\Routing\ResourceRegistrar as ExtendedResourceRegistrar;
+use Illuminate\Routing\ResourceRegistrar as IlluminateResourceRegistrar;
 use Illuminate\Support\ServiceProvider as IlluminateServiceProvider;
 
 class ServiceProvider extends IlluminateServiceProvider
@@ -17,14 +18,6 @@ class ServiceProvider extends IlluminateServiceProvider
      */
     public function register()
     {
-        $this->app->singleton('ext_route', Router::class);
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function provides()
-    {
-        return ['ext_route'];
+        $this->app->bind(IlluminateResourceRegistrar::class, ExtendedResourceRegistrar::class);
     }
 }

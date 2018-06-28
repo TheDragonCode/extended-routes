@@ -40,10 +40,7 @@
         "laravel": {
             "providers": [
                 "Helldar\\ExtendedRoutes\\ServiceProvider"
-            ],
-            "aliases": {
-                "ExtRoute": "Helldar\\ExtendedRoutes\\Facades\\Facade"
-            }
+            ]
         }
     }
 }

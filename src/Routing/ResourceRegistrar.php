@@ -2,9 +2,7 @@
 
 namespace Helldar\ExtendedRoutes\Routing;
 
-use Illuminate\Routing\ResourceRegistrar as IlluminateResourceRegistrar;
-
-class ResourceRegistrar extends IlluminateResourceRegistrar
+class ResourceRegistrar extends \Illuminate\Routing\ResourceRegistrar
 {
     /**
      * The default actions for a resourceful controller.
@@ -19,13 +17,13 @@ class ResourceRegistrar extends IlluminateResourceRegistrar
      * @param string $name
      * @param string $base
      * @param string $controller
-     * @param array  $options
+     * @param array $options
      *
      * @return \Illuminate\Routing\Route
      */
     protected function addResourceDeleted($name, $base, $controller, $options)
     {
-        $uri = $this->getResourceUri($name) . '/{' . $base . '}/deleted';
+        $uri = sprintf('%s/deleted', $this->getResourceUri($name));
 
         $action = $this->getResourceAction($name, $controller, 'deleted', $options);
 
@@ -38,13 +36,13 @@ class ResourceRegistrar extends IlluminateResourceRegistrar
      * @param string $name
      * @param string $base
      * @param string $controller
-     * @param array  $options
+     * @param array $options
      *
      * @return \Illuminate\Routing\Route
      */
     protected function addResourceRestore($name, $base, $controller, $options)
     {
-        $uri = $this->getResourceUri($name) .  '/{' . $base . '}/restore';
+        $uri = sprintf('%s/{%s}/restore', $this->getResourceUri($name), $base);
 
         $action = $this->getResourceAction($name, $controller, 'restore', $options);
 

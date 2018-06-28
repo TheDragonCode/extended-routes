@@ -35,19 +35,15 @@ If you don't use auto-discovery, add the ServiceProvider to the `providers` arra
 
     Helldar\ExtendedRoutes\ServiceProvider::class,
 
-and add the Facade in `aliases` section:
-
-    'ExtRoute' => Helldar\ExtendedRoutes\Facades\Facade::class,
-
 
 ## Using
 
 ```php
-app('ext_route')->apiResource('cars', 'CarsController');
+app('router')->apiResource('cars', 'CarsController');
 
 // or
 
-ExtRoute::apiResource('cars', 'CarsController');
+Route::apiResource('cars', 'CarsController');
 ```
 
 The following routes will be registered:
@@ -59,10 +55,8 @@ The following routes will be registered:
 | GET | cars/{car} | cars.show | MYAPP\Http\Controllers\CarsController@show |
 | PUT | cars/{car} | cars.update | MYAPP\Http\Controllers\CarsController@update |
 | DELETE | cars/{car} | cars.destroy | MYAPP\Http\Controllers\CarsController@destroy |
-| POST | cars/{car} | cars.restore | MYAPP\Http\Controllers\CarsController@restore |
-| GET | cars | cars.deleted | MYAPP\Http\Controllers\CarsController@deleted |
-
-This package only expands the resource routing, inheriting from them. This means that using the instance of `app('ext_route')` you can work with any other routs.
+| POST | cars/{car}/restore | cars.restore | MYAPP\Http\Controllers\CarsController@restore |
+| GET | cars/deleted | cars.deleted | MYAPP\Http\Controllers\CarsController@deleted |
 
 
 ## Copyright and License

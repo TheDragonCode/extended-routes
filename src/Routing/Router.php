@@ -2,17 +2,14 @@
 
 namespace Helldar\ExtendedRoutes\Routing;
 
-use Illuminate\Routing\PendingResourceRegistration;
-use Illuminate\Routing\Router as IlluminateRouter;
-
-class Router extends IlluminateRouter
+class Router extends \Illuminate\Routing\Router
 {
     /**
      * Route an API resource to a controller.
      *
      * @param string $name
      * @param string $controller
-     * @param array  $options
+     * @param array $options
      *
      * @return \Illuminate\Routing\PendingResourceRegistration
      */
@@ -27,27 +24,5 @@ class Router extends IlluminateRouter
         return $this->resource($name, $controller, array_merge([
             'only' => $only,
         ], $options));
-    }
-
-    /**
-     * Route a resource to a controller.
-     *
-     * @param string $name
-     * @param string $controller
-     * @param array  $options
-     *
-     * @return \Illuminate\Routing\PendingResourceRegistration
-     */
-    public function resource($name, $controller, array $options = [])
-    {
-        if ($this->container && $this->container->bound(ResourceRegistrar::class)) {
-            $registrar = $this->container->make(ResourceRegistrar::class);
-        } else {
-            $registrar = new ResourceRegistrar($this);
-        }
-
-        return new PendingResourceRegistration(
-            $registrar, $name, $controller, $options
-        );
     }
 }
