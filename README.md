@@ -31,9 +31,13 @@ Instead, you may of course manually update your require block and run `composer 
 }
 ```
 
-If you don't use auto-discovery, add the ServiceProvider to the providers array in `config/app.php`:
+If you don't use auto-discovery, add the ServiceProvider to the `providers` array in `config/app.php`:
 
     Helldar\ExtendedRoutes\ServiceProvider::class,
+
+and add the Facade in `aliases` section:
+
+    'ExtRoute' => Helldar\ExtendedRoutes\Facades\Facade::class,
 
 
 ## Using
