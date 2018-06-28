@@ -15,7 +15,7 @@ This helper extends the standard set of resource routing methods to work with So
 
 ## Installation
 
-To get the latest version of `Extended Resource Router`, simply require the project using [Composer](https://getcomposer.org/):
+To get the latest version of `Extended Resource Router`, simply require the project using [Composer](https://getcomposer.org):
 
 ```bash
 $ composer require andrey-helldar/extended-resource-router
@@ -62,6 +62,8 @@ The following routes will be registered:
 | DELETE | cars/{car} | cars.destroy | MYAPP\Http\Controllers\CarsController@destroy |
 | POST | cars/{car} | cars.restore | MYAPP\Http\Controllers\CarsController@restore |
 | GET | cars | cars.deleted | MYAPP\Http\Controllers\CarsController@deleted |
+
+This package only expands the resource routing, inheriting from them. This means that using the instance of `app('ext_router')` you can work with any other routs.
 
 
 ## Copyright and License
