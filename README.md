@@ -36,9 +36,6 @@ If you don't use auto-discovery, add the ServiceProvider to the providers array 
     Helldar\ExtendedResourceRouter\ServiceProvider::class,
 
 
-Alright! Use `app('ext_router')` instance.
-
-
 ## Using
 
 ```php
@@ -49,6 +46,10 @@ app('ext_router')->apiResource('cars', 'CarsController');
 use Helldar\ExtendedResourceRouter\Routing\Router;
 
 Router::apiResource('cars', 'CarsController');
+
+// or using facade
+
+ExtendedRouter::apiResource('cars', 'CarsController');
 ```
 
 The following routes will be registered:

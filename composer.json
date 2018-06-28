@@ -20,11 +20,8 @@
         "illuminate/routing": "5.4.*|5.5.*|5.6.*",
         "illuminate/support": "5.4.*|5.5.*|5.6.*"
     },
-    "require-dev": { },
+    "require-dev": {},
     "autoload": {
-        "classmap": [
-            "src/"
-        ],
         "psr-4": {
             "Helldar\\ExtendedResourceRouter\\": "src/"
         }
@@ -40,10 +37,16 @@
     "minimum-stability": "stable",
     "prefer-stable": true,
     "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        },
         "laravel": {
             "providers": [
                 "Helldar\\ExtendedResourceRouter\\ServiceProvider"
-            ]
+            ],
+            "aliases": {
+                "ExtendedRouter": "Helldar\\ExtendedResourceRouter\\Facade"
+            }
         }
     }
 }
