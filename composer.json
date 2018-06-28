@@ -1,13 +1,13 @@
 {
-    "name": "andrey-helldar/extended-resource-router",
-    "description": "This helper extends the standard set of resource routing methods to work with SoftDeletes",
+    "name": "andrey-helldar/extended-routes",
+    "description": "This helper extends the standard set of resource routing methods to work with SoftDeletes and other extends",
     "type": "library",
     "license": "MIT",
-    "homepage": "https://github.com/andrey-helldar/extended-resource-router",
-    "keywords": ["extended router", "resource", "routes", "router", "laravel"],
+    "homepage": "https://github.com/andrey-helldar/extended-routes",
+    "keywords": ["extended routes", "resource", "routes", "router", "laravel"],
     "support": {
-        "issues": "https://github.com/andrey-helldar/extended-resource-router/issues",
-        "source": "https://github.com/andrey-helldar/extended-resource-router"
+        "issues": "https://github.com/andrey-helldar/extended-routes/issues",
+        "source": "https://github.com/andrey-helldar/extended-routes"
     },
     "authors": [
         {
@@ -23,7 +23,7 @@
     "require-dev": {},
     "autoload": {
         "psr-4": {
-            "Helldar\\ExtendedResourceRouter\\": "src/"
+            "Helldar\\ExtendedRoutes\\": "src/"
         }
     },
     "autoload-dev": {
@@ -42,10 +42,10 @@
         },
         "laravel": {
             "providers": [
-                "Helldar\\ExtendedResourceRouter\\ServiceProvider"
+                "Helldar\\ExtendedRoutes\\ServiceProvider"
             ],
             "aliases": {
-                "ExtRouter": "Helldar\\ExtendedResourceRouter\\Facade"
+                "ExtRouter": "Helldar\\ExtendedRoutes\\Facade"
             }
         }
     }

@@ -1,24 +1,24 @@
-## Extended Resource Router
+## Extended Routes
 
-This helper extends the standard set of resource routing methods to work with SoftDeletes.
+This helper extends the standard set of resource routing methods to work with SoftDeletes and other extends.
 
-![extended-resource-router](https://user-images.githubusercontent.com/10347617/41983183-003ce8e0-7a36-11e8-9ef4-a3c587e6ec10.png)
+![extended-routes](https://user-images.githubusercontent.com/10347617/41983183-003ce8e0-7a36-11e8-9ef4-a3c587e6ec10.png)
 
 <p align="center">
     <a href="https://styleci.io/repos/138897572"><img src="https://styleci.io/repos/138897572/shield" alt="StyleCI" /></a>
-    <a href="https://packagist.org/packages/andrey-helldar/extended-resource-router"><img src="https://img.shields.io/packagist/dt/andrey-helldar/extended-resource-router.svg?style=flat-square" alt="Total Downloads" /></a>
-    <a href="https://packagist.org/packages/andrey-helldar/extended-resource-router"><img src="https://poser.pugx.org/andrey-helldar/extended-resource-router/v/stable?format=flat-square" alt="Latest Stable Version" /></a>
-    <a href="https://packagist.org/packages/andrey-helldar/extended-resource-router"><img src="https://poser.pugx.org/andrey-helldar/extended-resource-router/v/unstable?format=flat-square" alt="Latest Unstable Version" /></a>
-    <a href="LICENSE"><img src="https://poser.pugx.org/andrey-helldar/extended-resource-router/license?format=flat-square" alt="License" /></a>
+    <a href="https://packagist.org/packages/andrey-helldar/extended-routes"><img src="https://img.shields.io/packagist/dt/andrey-helldar/extended-routes.svg?style=flat-square" alt="Total Downloads" /></a>
+    <a href="https://packagist.org/packages/andrey-helldar/extended-routes"><img src="https://poser.pugx.org/andrey-helldar/extended-routes/v/stable?format=flat-square" alt="Latest Stable Version" /></a>
+    <a href="https://packagist.org/packages/andrey-helldar/extended-routes"><img src="https://poser.pugx.org/andrey-helldar/extended-routes/v/unstable?format=flat-square" alt="Latest Unstable Version" /></a>
+    <a href="LICENSE"><img src="https://poser.pugx.org/andrey-helldar/extended-routes/license?format=flat-square" alt="License" /></a>
 </p>
 
 
 ## Installation
 
-To get the latest version of `Extended Resource Router`, simply require the project using [Composer](https://getcomposer.org):
+To get the latest version of `Extended Routes`, simply require the project using [Composer](https://getcomposer.org):
 
 ```bash
-$ composer require andrey-helldar/extended-resource-router
+$ composer require andrey-helldar/extended-routes
 ```
 
 Instead, you may of course manually update your require block and run `composer update` if you so choose:
@@ -26,24 +26,24 @@ Instead, you may of course manually update your require block and run `composer 
 ```json
 {
     "require": {
-        "andrey-helldar/extended-resource-router": "^1.0"
+        "andrey-helldar/extended-routes": "^1.0"
     }
 }
 ```
 
 If you don't use auto-discovery, add the ServiceProvider to the providers array in `config/app.php`:
 
-    Helldar\ExtendedResourceRouter\ServiceProvider::class,
+    Helldar\ExtendedRoutes\ServiceProvider::class,
 
 
 ## Using
 
 ```php
-app('ext_router')->apiResource('cars', 'CarsController');
+app('ext_route')->apiResource('cars', 'CarsController');
 
 // or
 
-ExtRouter::apiResource('cars', 'CarsController');
+ExtRoute::apiResource('cars', 'CarsController');
 ```
 
 The following routes will be registered:
@@ -58,7 +58,7 @@ The following routes will be registered:
 | POST | cars/{car} | cars.restore | MYAPP\Http\Controllers\CarsController@restore |
 | GET | cars | cars.deleted | MYAPP\Http\Controllers\CarsController@deleted |
 
-This package only expands the resource routing, inheriting from them. This means that using the instance of `app('ext_router')` you can work with any other routs.
+This package only expands the resource routing, inheriting from them. This means that using the instance of `app('ext_route')` you can work with any other routs.
 
 
 ## Copyright and License

@@ -1,8 +1,7 @@
 <?php
 
-namespace Helldar\ExtendedResourceRouter;
+namespace Helldar\ExtendedRoutes;
 
-use Helldar\ExtendedResourceRouter\Routing\Router;
 use Illuminate\Support\Facades\Facade as IlluminateFacade;
 
 class Facade extends IlluminateFacade
@@ -12,6 +11,6 @@ class Facade extends IlluminateFacade
      */
     protected static function getFacadeAccessor()
     {
-        return Router::class;
+        return 'ext_route';
     }
 }

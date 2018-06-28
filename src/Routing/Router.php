@@ -1,6 +1,6 @@
 <?php
 
-namespace Helldar\ExtendedResourceRouter\Routing;
+namespace Helldar\ExtendedRoutes\Routing;
 
 use Illuminate\Routing\PendingResourceRegistration;
 use Illuminate\Routing\Router as IlluminateRouter;
@@ -12,7 +12,7 @@ class Router extends IlluminateRouter
      *
      * @param string $name
      * @param string $controller
-     * @param array  $options
+     * @param array $options
      *
      * @return \Illuminate\Routing\PendingResourceRegistration
      */
@@ -34,7 +34,7 @@ class Router extends IlluminateRouter
      *
      * @param string $name
      * @param string $controller
-     * @param array  $options
+     * @param array $options
      *
      * @return \Illuminate\Routing\PendingResourceRegistration
      */
@@ -42,7 +42,8 @@ class Router extends IlluminateRouter
     {
         if ($this->container && $this->container->bound(ResourceRegistrar::class)) {
             $registrar = $this->container->make(ResourceRegistrar::class);
-        } else {
+        }
+        else {
             $registrar = new ResourceRegistrar($this);
         }
 

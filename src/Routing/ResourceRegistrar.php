@@ -1,6 +1,6 @@
 <?php
 
-namespace Helldar\ExtendedResourceRouter\Routing;
+namespace Helldar\ExtendedRoutes\Routing;
 
 use Illuminate\Routing\ResourceRegistrar as IlluminateResourceRegistrar;
 
@@ -19,7 +19,7 @@ class ResourceRegistrar extends IlluminateResourceRegistrar
      * @param string $name
      * @param string $base
      * @param string $controller
-     * @param array  $options
+     * @param array $options
      *
      * @return \Illuminate\Routing\Route
      */
@@ -38,7 +38,7 @@ class ResourceRegistrar extends IlluminateResourceRegistrar
      * @param string $name
      * @param string $base
      * @param string $controller
-     * @param array  $options
+     * @param array $options
      *
      * @return \Illuminate\Routing\Route
      */
