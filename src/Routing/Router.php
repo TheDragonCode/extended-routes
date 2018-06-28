@@ -9,7 +9,7 @@ class Router extends \Illuminate\Routing\Router
      *
      * @param string $name
      * @param string $controller
-     * @param array $options
+     * @param array  $options
      *
      * @return \Illuminate\Routing\PendingResourceRegistration
      */
