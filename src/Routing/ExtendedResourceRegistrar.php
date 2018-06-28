@@ -2,14 +2,16 @@
 
 namespace Helldar\ExtendedRoutes\Routing;
 
-class ResourceRegistrar extends \Illuminate\Routing\ResourceRegistrar
+use Illuminate\Routing\ResourceRegistrar;
+
+class ExtendedResourceRegistrar extends ResourceRegistrar
 {
     /**
      * The default actions for a resourceful controller.
      *
      * @var array
      */
-    protected $resourceDefaults = ['index', 'create', 'store', 'show', 'edit', 'update', 'destroy', 'restore', 'deleted'];
+    protected $resourceDefaults = ['index', 'trashed', 'create', 'store', 'show', 'edit', 'update', 'destroy', 'restore'];
 
     /**
      * Add the index method for a resourceful route.
@@ -17,15 +19,15 @@ class ResourceRegistrar extends \Illuminate\Routing\ResourceRegistrar
      * @param string $name
      * @param string $base
      * @param string $controller
-     * @param array  $options
+     * @param array $options
      *
      * @return \Illuminate\Routing\Route
      */
-    protected function addResourceDeleted($name, $base, $controller, $options)
+    protected function addResourceTrashed($name, $base, $controller, $options)
     {
-        $uri = sprintf('%s/deleted', $this->getResourceUri($name));
+        $uri = $this->getResourceUri($name) . '/trashed';
 
-        $action = $this->getResourceAction($name, $controller, 'deleted', $options);
+        $action = $this->getResourceAction($name, $controller, 'trashed', $options);
 
         return $this->router->get($uri, $action);
     }
@@ -36,13 +38,13 @@ class ResourceRegistrar extends \Illuminate\Routing\ResourceRegistrar
      * @param string $name
      * @param string $base
      * @param string $controller
-     * @param array  $options
+     * @param array $options
      *
      * @return \Illuminate\Routing\Route
      */
     protected function addResourceRestore($name, $base, $controller, $options)
     {
-        $uri = sprintf('%s/{%s}/restore', $this->getResourceUri($name), $base);
+        $uri = $this->getResourceUri($name) . '/{' . $base . '}/restore';
 
         $action = $this->getResourceAction($name, $controller, 'restore', $options);
 

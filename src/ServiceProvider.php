@@ -2,22 +2,40 @@
 
 namespace Helldar\ExtendedRoutes;
 
-use Helldar\ExtendedRoutes\Routing\ResourceRegistrar as ExtendedResourceRegistrar;
-use Helldar\ExtendedRoutes\Routing\Router as ExtendedRouter;
-use Illuminate\Routing\ResourceRegistrar as IlluminateResourceRegistrar;
-use Illuminate\Support\ServiceProvider as IlluminateServiceProvider;
+use Helldar\ExtendedRoutes\Routing\ExtendedResourceRegistrar;
+use Helldar\ExtendedRoutes\Routing\RouterMixin;
+use Illuminate\Foundation\Support\Providers\RouteServiceProvider;
+use Illuminate\Routing\ResourceRegistrar;
+use Illuminate\Routing\Router;
 
-class ServiceProvider extends IlluminateServiceProvider
+class ServiceProvider extends RouteServiceProvider
 {
     /**
-     * {@inheritdoc}
+     * Register the service provider.
+     *
+     * @throws \ReflectionException
      */
     public function register()
     {
-        $this->app->bind(IlluminateResourceRegistrar::class, ExtendedResourceRegistrar::class);
+        $this->registerResourceRegistrar();
+        $this->registerRouterMacro();
+    }
 
-        $this->app->singleton('router', function ($app) {
-            return new ExtendedRouter($app['events'], $app);
-        });
+    /**
+     * Register resource registrar.
+     */
+    protected function registerResourceRegistrar()
+    {
+        $this->app->bind(ResourceRegistrar::class, ExtendedResourceRegistrar::class);
+    }
+
+    /**
+     *  Add macro to router.
+     *
+     * @throws \ReflectionException
+     */
+    protected function registerRouterMacro()
+    {
+        Router::mixin(new RouterMixin());
     }
 }

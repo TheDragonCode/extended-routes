@@ -26,7 +26,7 @@ Instead, you may of course manually update your require block and run `composer 
 ```json
 {
     "require": {
-        "andrey-helldar/extended-routes": "^1.0"
+        "andrey-helldar/extended-routes": "^1.1"
     }
 }
 ```
@@ -38,78 +38,48 @@ If you don't use auto-discovery, add the ServiceProvider to the `providers` arra
 
 ## Using
 
-Add to your `app/Http/Kernel.php` next code:
+Add to BaseModel method
 
 ```php
-protected function dispatchToRouter()
+use Helldar\ExtendedRoutes\Routing\ModelBindingResolver;
+
+public function resolveRouteBinding($value)
 {
-    $this->router = $this->app['router'];
-
-    $this->registerMiddlewareGroups();
-    $this->registerMiddleware();
-
-    return parent::dispatchToRouter();
-}
-
-protected function registerMiddlewareGroups()
-{
-    foreach ($this->middlewareGroups as $key => $middleware) {
-        $this->router->middlewareGroup($key, $middleware);
-    }
-}
-
-protected function registerMiddleware()
-{
-    foreach ($this->routeMiddleware as $key => $middleware) {
-        $this->router->aliasMiddleware($key, $middleware);
-    }
+    return (new ModelBindingResolver($this))->resolve($value);
 }
 ```
 
-Alright! This package override a default `router` helper.
+or change extends of model:
 
 ```php
-app('router')->apiResource('marks', 'CarsController');
+use Helldar\ExtendedRoutes\Models\SoftDeletesModel;
+
+class Foo extends SoftDeletesModel {
+    //
+}
+```
+
+and for some model Foo with SoftDeletes trait we can add routes:
+
+```php
+app('router')->apiRestorableResource('foos', 'FoosController');
 
 // or
 
-Route::apiResource('cars', 'CarsController');
+Route::apiRestorableResource('foos', 'FoosController');
 ```
 
-The following routes will be registered:
-
-| methods | url | name | controller |
-| --- | --- | --- | --- |
-| GET | marks | marks.index | MYAPP\Http\Controllers\CarsMarksController@index |
-| POST | marks/{mark} | marks.store | MYAPP\Http\Controllers\CarsMarksController@store |
-| GET | marks/{mark} | marks.show | MYAPP\Http\Controllers\CarsMarksController@show |
-| PUT | marks/{mark} | marks.update | MYAPP\Http\Controllers\CarsMarksController@update |
-| DELETE | marks/{mark} | marks.destroy | MYAPP\Http\Controllers\CarsMarksController@destroy |
-| POST | marks/{mark}/restore | marks.restore | MYAPP\Http\Controllers\CarsMarksController@restore |
-| GET | marks/deleted | marks.deleted | MYAPP\Http\Controllers\CarsMarksController@deleted |
-| GET | cars | cars.index | MYAPP\Http\Controllers\CarsController@index |
-| POST | cars/{car} | cars.store | MYAPP\Http\Controllers\CarsController@store |
-| GET | cars/{car} | cars.show | MYAPP\Http\Controllers\CarsController@show |
-| PUT | cars/{car} | cars.update | MYAPP\Http\Controllers\CarsController@update |
-| DELETE | cars/{car} | cars.destroy | MYAPP\Http\Controllers\CarsController@destroy |
-| POST | cars/{car}/restore | cars.restore | MYAPP\Http\Controllers\CarsController@restore |
-| GET | cars/deleted | cars.deleted | MYAPP\Http\Controllers\CarsController@deleted |
-
-You can also exclude unnecessary routes:
-```php
-app('router')
-    ->apiResource('marks', 'CarsController')
-    ->except('restore', 'delete');
-```
+| Domain | Method | URI | Name | Action | Middleware |
+|---|---|---|---|---|---|
+| | GET/HEAD  | api/foos               | foos.index   | App\Http\Controllers\FoosController@index     | api        |
+| | POST      | api/foos               | foos.store   | App\Http\Controllers\FoosController@store     | api        |
+| | GET/HEAD  | api/foos/trashed       | foos.trashed | App\Http\Controllers\FoosController@trashed   | api        |
+| | GET/HEAD  | api/foos/{foo}         | foos.show    | App\Http\Controllers\FoosController@show      | api        |
+| | PUT/PATCH | api/foos/{foo}         | foos.update  | App\Http\Controllers\FoosController@update    | api        |
+| | DELETE    | api/foos/{foo}         | foos.destroy | App\Http\Controllers\FoosController@destroy   | api        |
+| | POST      | api/foos/{foo}/restore | foos.restore | App\Http\Controllers\FoosController@restore   | api        |
 
 
 ## Copyright and License
 
-This package was written by Andrey Helldar, and is licensed under [The MIT License](LICENSE).
-
-
-## Translation
-
-Translations of text and comment by Google Translate.
-
-Help with translation +1 in karma :)
+This package licensed under [The MIT License](LICENSE).
