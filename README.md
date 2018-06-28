@@ -38,8 +38,38 @@ If you don't use auto-discovery, add the ServiceProvider to the `providers` arra
 
 ## Using
 
+Add to your `app/Http/Kernel.php` next code:
+
 ```php
-app('router')->apiResource('cars', 'CarsController');
+protected function dispatchToRouter()
+{
+    $this->router = $this->app['router'];
+
+    $this->registerMiddlewareGroups();
+    $this->registerMiddleware();
+
+    return parent::dispatchToRouter();
+}
+
+protected function registerMiddlewareGroups()
+{
+    foreach ($this->middlewareGroups as $key => $middleware) {
+        $this->router->middlewareGroup($key, $middleware);
+    }
+}
+
+protected function registerMiddleware()
+{
+    foreach ($this->routeMiddleware as $key => $middleware) {
+        $this->router->aliasMiddleware($key, $middleware);
+    }
+}
+```
+
+Alright! This package override a default `router` helper.
+
+```php
+app('router')->apiResource('marks', 'CarsController');
 
 // or
 
@@ -50,6 +80,13 @@ The following routes will be registered:
 
 | methods | url | name | controller |
 | --- | --- | --- | --- |
+| GET | marks | marks.index | MYAPP\Http\Controllers\CarsMarksController@index |
+| POST | marks/{mark} | marks.store | MYAPP\Http\Controllers\CarsMarksController@store |
+| GET | marks/{mark} | marks.show | MYAPP\Http\Controllers\CarsMarksController@show |
+| PUT | marks/{mark} | marks.update | MYAPP\Http\Controllers\CarsMarksController@update |
+| DELETE | marks/{mark} | marks.destroy | MYAPP\Http\Controllers\CarsMarksController@destroy |
+| POST | marks/{mark}/restore | marks.restore | MYAPP\Http\Controllers\CarsMarksController@restore |
+| GET | marks/deleted | marks.deleted | MYAPP\Http\Controllers\CarsMarksController@deleted |
 | GET | cars | cars.index | MYAPP\Http\Controllers\CarsController@index |
 | POST | cars/{car} | cars.store | MYAPP\Http\Controllers\CarsController@store |
 | GET | cars/{car} | cars.show | MYAPP\Http\Controllers\CarsController@show |
@@ -57,6 +94,13 @@ The following routes will be registered:
 | DELETE | cars/{car} | cars.destroy | MYAPP\Http\Controllers\CarsController@destroy |
 | POST | cars/{car}/restore | cars.restore | MYAPP\Http\Controllers\CarsController@restore |
 | GET | cars/deleted | cars.deleted | MYAPP\Http\Controllers\CarsController@deleted |
+
+You can also exclude unnecessary routes:
+```php
+app('router')
+    ->apiResource('marks', 'CarsController')
+    ->except('restore', 'delete');
+```
 
 
 ## Copyright and License

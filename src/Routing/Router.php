@@ -7,9 +7,9 @@ class Router extends \Illuminate\Routing\Router
     /**
      * Route an API resource to a controller.
      *
-     * @param string $name
-     * @param string $controller
-     * @param array  $options
+     * @param  string $name
+     * @param  string $controller
+     * @param  array $options
      *
      * @return \Illuminate\Routing\PendingResourceRegistration
      */
