@@ -44,7 +44,7 @@ class ResourceRegistrar extends IlluminateResourceRegistrar
      */
     protected function addResourceRestore($name, $base, $controller, $options)
     {
-        $uri = $this->getResourceUri($name) .  '/{' . $base . '}/restore';
+        $uri = $this->getResourceUri($name) . '/{' . $base . '}/restore';
 
         $action = $this->getResourceAction($name, $controller, 'restore', $options);
 
