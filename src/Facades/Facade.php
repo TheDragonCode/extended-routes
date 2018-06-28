@@ -1,10 +1,8 @@
 <?php
 
-namespace Helldar\ExtendedRoutes;
+namespace Helldar\ExtendedRoutes\Facades;
 
-use Illuminate\Support\Facades\Facade as IlluminateFacade;
-
-class Facade extends IlluminateFacade
+class Facade
 {
     /**
      * {@inheritdoc}
