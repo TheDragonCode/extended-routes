@@ -10,7 +10,7 @@ class ServiceProvider extends IlluminateServiceProvider
     /**
      * {@inheritdoc}
      */
-    protected $defer = true;
+    protected $defer = false;
 
     /**
      * {@inheritdoc}
