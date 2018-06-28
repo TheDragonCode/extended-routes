@@ -4,7 +4,7 @@ namespace Helldar\ExtendedRoutes\Models;
 
 use Helldar\ExtendedRoutes\Routing\ModelBindingResolver;
 
-class SoftDeletesModel extends \Illuminate\Database\Eloquent\Model
+class Model extends \Illuminate\Database\Eloquent\Model
 {
     public function resolveRouteBinding($value)
     {
