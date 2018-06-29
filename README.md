@@ -61,6 +61,15 @@ class Foo extends SoftDeletesModel {
 }
 ```
 
+or using trait:
+```php
+use Helldar\ExtendedRoutes\Traits\SoftDeletesModel;
+
+class Foo extends Model {
+    use SoftDeletesModel;
+}
+```
+
 and for some model Foo with SoftDeletes trait we can add routes:
 
 ```php
