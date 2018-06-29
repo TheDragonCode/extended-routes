@@ -80,15 +80,15 @@ app('router')->apiRestorableResource('foos', 'FoosController');
 Route::apiRestorableResource('foos', 'FoosController');
 ```
 
-| Domain | Method | URI | Name | Action | Middleware |
-|---|---|---|---|---|---|
-| | GET/HEAD  | api/foos               | foos.index   | App\Http\Controllers\FoosController@index     | api        |
-| | POST      | api/foos               | foos.store   | App\Http\Controllers\FoosController@store     | api        |
-| | GET/HEAD  | api/foos/trashed       | foos.trashed | App\Http\Controllers\FoosController@trashed   | api        |
-| | GET/HEAD  | api/foos/{foo}         | foos.show    | App\Http\Controllers\FoosController@show      | api        |
-| | PUT/PATCH | api/foos/{foo}         | foos.update  | App\Http\Controllers\FoosController@update    | api        |
-| | DELETE    | api/foos/{foo}         | foos.destroy | App\Http\Controllers\FoosController@destroy   | api        |
-| | POST      | api/foos/{foo}/restore | foos.restore | App\Http\Controllers\FoosController@restore   | api        |
+| Method | URI | Name | Action | Middleware |
+|---|---|---|---|---|
+| GET/HEAD  | api/foos               | foos.index   | App\Http\Controllers\FoosController@index     | api |
+| POST      | api/foos               | foos.store   | App\Http\Controllers\FoosController@store     | api |
+| GET/HEAD  | api/foos/trashed       | foos.trashed | App\Http\Controllers\FoosController@trashed   | api |
+| GET/HEAD  | api/foos/{foo}         | foos.show    | App\Http\Controllers\FoosController@show      | api |
+| PUT/PATCH | api/foos/{foo}         | foos.update  | App\Http\Controllers\FoosController@update    | api |
+| DELETE    | api/foos/{foo}         | foos.destroy | App\Http\Controllers\FoosController@destroy   | api |
+| POST      | api/foos/{foo}/restore | foos.restore | App\Http\Controllers\FoosController@restore   | api |
 
 
 ## Copyright and License
