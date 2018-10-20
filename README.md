@@ -43,11 +43,17 @@ Add to BaseModel method
 
 ```php
 use Helldar\ExtendedRoutes\Routing\ModelBindingResolver;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
-public function resolveRouteBinding($value)
+class Page extends Model
 {
-    return (new ModelBindingResolver($this))
-        ->resolve($value);
+    use SoftDeletes;
+
+    public function resolveRouteBinding($value)
+    {
+        return (new ModelBindingResolver($this))
+            ->resolve($value);
+    }
 }
 ```
 
@@ -55,15 +61,17 @@ or change extends of model:
 
 ```php
 use Helldar\ExtendedRoutes\Models\SoftDeletesModel;
+//use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Foo extends SoftDeletesModel {
-    //
+    //use SoftDeletes; << need to remove conflicting trait.
 }
 ```
 
 or using trait:
 ```php
 use Helldar\ExtendedRoutes\Traits\SoftDeletesModel;
+//use Illuminate\Database\Eloquent\SoftDeletes; << need to remove conflicting trait.
 
 class Foo extends Model {
     use SoftDeletesModel;

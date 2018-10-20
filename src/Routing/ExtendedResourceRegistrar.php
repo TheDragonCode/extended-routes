@@ -19,7 +19,7 @@ class ExtendedResourceRegistrar extends ResourceRegistrar
      * @param string $name
      * @param string $base
      * @param string $controller
-     * @param array  $options
+     * @param array $options
      *
      * @return \Illuminate\Routing\Route
      */
@@ -38,7 +38,7 @@ class ExtendedResourceRegistrar extends ResourceRegistrar
      * @param string $name
      * @param string $base
      * @param string $controller
-     * @param array  $options
+     * @param array $options
      *
      * @return \Illuminate\Routing\Route
      */
