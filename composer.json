@@ -3,7 +3,6 @@
     "description": "This helper extends the standard set of resource routing methods to work with SoftDeletes and other extends",
     "type": "library",
     "license": "MIT",
-    "homepage": "https://github.com/andrey-helldar/extended-routes",
     "keywords": ["extended routes", "resource", "routes", "router", "laravel"],
     "support": {
         "issues": "https://github.com/andrey-helldar/extended-routes/issues",
@@ -25,7 +24,9 @@
         "illuminate/support": "^5.4",
         "illuminate/database": "^5.4"
     },
-    "require-dev": {},
+    "suggest": {
+        "symfony/thanks": "Give thanks (in the form of a GitHub) to your fellow PHP package maintainers"
+    },
     "autoload": {
         "psr-4": {
             "Helldar\\ExtendedRoutes\\": "src/"
