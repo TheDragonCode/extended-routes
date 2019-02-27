@@ -4,6 +4,7 @@ namespace Helldar\ExtendedRoutes\Routing;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Support\Str;
 
 class ModelBindingResolver
 {
@@ -42,6 +43,6 @@ class ModelBindingResolver
     {
         $route = (string) app('router')->currentRouteName();
 
-        return ends_with($route, '.restore');
+        return Str::endsWith($route, '.restore');
     }
 }
