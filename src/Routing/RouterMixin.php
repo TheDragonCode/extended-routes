@@ -4,7 +4,7 @@ namespace Helldar\ExtendedRoutes\Routing;
 
 use Helldar\ExtendedRoutes\Contracts\RouteContract;
 
-class RouterMixin implements RouteContract
+class RouterMixin
 {
     /**
      * Getting Route API
@@ -17,29 +17,15 @@ class RouterMixin implements RouteContract
             /** @var \Illuminate\Routing\Router $router */
             $router = $this;
 
-            return $router->resource($name, $controller, $this->options($options));
+            $only = isset($options['except'])
+                ? array_diff(RouteContract::API_METHODS, (array) $options['except'])
+                : RouteContract::API_METHODS;
+
+            return $router->resource(
+                $name,
+                $controller,
+                array_merge(compact('only'), $options)
+            );
         };
-    }
-
-    /**
-     * Getting a list of allowed methods.
-     *
-     * @param array $options
-     *
-     * @return array
-     */
-    protected function filterMethods(array $options = [])
-    {
-        return isset($options['except'])
-            ? array_diff(static::API_METHODS, (array) $options['except'])
-            : static::API_METHODS;
-    }
-
-    protected function options(array $options = [])
-    {
-        return array_merge(
-            ['only' => $this->filterMethods($options)],
-            $options
-        );
     }
 }
