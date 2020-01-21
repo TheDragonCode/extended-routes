@@ -14,9 +14,10 @@ class RouterMixin implements RouteContract
     public function apiRestorableResource()
     {
         return function ($name, $controller, array $options = []) {
-            return $this
-                ->getRouter()
-                ->resource($name, $controller, $this->options($options));
+            /** @var \Illuminate\Routing\Router $router */
+            $router = $this;
+
+            return $router->resource($name, $controller, $this->options($options));
         };
     }
 
@@ -40,15 +41,5 @@ class RouterMixin implements RouteContract
             ['only' => $this->filterMethods($options)],
             $options
         );
-    }
-
-    /**
-     * Getting a Route Instance.
-     *
-     * @return \Helldar\ExtendedRoutes\Routing\RouterMixin|\Illuminate\Routing\Router
-     */
-    protected function getRouter()
-    {
-        return $this;
     }
 }
