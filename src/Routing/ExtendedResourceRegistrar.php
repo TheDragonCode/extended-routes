@@ -2,16 +2,17 @@
 
 namespace Helldar\ExtendedRoutes\Routing;
 
+use Helldar\ExtendedRoutes\Contracts\RouteContract;
 use Illuminate\Routing\ResourceRegistrar;
 
-class ExtendedResourceRegistrar extends ResourceRegistrar
+class ExtendedResourceRegistrar extends ResourceRegistrar implements RouteContract
 {
     /**
      * The default actions for a resourceful controller.
      *
      * @var array
      */
-    protected $resourceDefaults = ['index', 'trashed', 'create', 'store', 'show', 'edit', 'update', 'destroy', 'restore'];
+    protected $resourceDefaults = self::WEB_METHODS;
 
     /**
      * Add the index method for a resourceful route.
@@ -25,9 +26,9 @@ class ExtendedResourceRegistrar extends ResourceRegistrar
      */
     protected function addResourceTrashed($name, $base, $controller, $options)
     {
-        $uri = $this->getResourceUri($name) . '/trashed';
+        $uri = $this->getResourceUri($name) . '/' . static::POSTFIX_TRASHED;
 
-        $action = $this->getResourceAction($name, $controller, 'trashed', $options);
+        $action = $this->getResourceAction($name, $controller, static::POSTFIX_TRASHED, $options);
 
         return $this->router->get($uri, $action);
     }
@@ -44,9 +45,9 @@ class ExtendedResourceRegistrar extends ResourceRegistrar
      */
     protected function addResourceRestore($name, $base, $controller, $options)
     {
-        $uri = $this->getResourceUri($name) . '/{' . $base . '}/restore';
+        $uri = $this->getResourceUri($name) . '/{' . $base . '}/' . static::POSTFIX_RESTORE;
 
-        $action = $this->getResourceAction($name, $controller, 'restore', $options);
+        $action = $this->getResourceAction($name, $controller, static::POSTFIX_RESTORE, $options);
 
         return $this->router->post($uri, $action);
     }

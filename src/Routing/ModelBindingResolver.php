@@ -2,11 +2,12 @@
 
 namespace Helldar\ExtendedRoutes\Routing;
 
+use Helldar\ExtendedRoutes\Contracts\RouteContract;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Illuminate\Support\Str;
 
-class ModelBindingResolver
+class ModelBindingResolver implements RouteContract
 {
     /**
      * @var \Illuminate\Database\Eloquent\Model|\Illuminate\Database\Eloquent\Builder
@@ -23,12 +24,17 @@ class ModelBindingResolver
         $this->model = $model;
     }
 
+    /**
+     * @param $value
+     *
+     * @return \Illuminate\Database\Eloquent\Builder|\Illuminate\Database\Eloquent\Model|mixed|object|null
+     */
     public function resolve($value)
     {
         return $this->model
             ->where($this->model->getRouteKeyName(), $value)
-            ->when($this->needTrashed(), function ($q) {
-                $q->onlyTrashed();
+            ->when($this->needTrashed(), function ($query) {
+                $query->onlyTrashed();
             })
             ->first();
     }
@@ -41,8 +47,8 @@ class ModelBindingResolver
 
     protected function trashedRoute()
     {
-        $route = (string) app('router')->currentRouteName();
+        $route = app('router')->currentRouteName();
 
-        return Str::endsWith($route, '.restore');
+        return Str::endsWith($route, '.' . static::POSTFIX_RESTORE);
     }
 }

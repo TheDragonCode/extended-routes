@@ -2,27 +2,53 @@
 
 namespace Helldar\ExtendedRoutes\Routing;
 
-use Illuminate\Routing\Router;
+use Helldar\ExtendedRoutes\Contracts\RouteContract;
 
-class RouterMixin
+class RouterMixin implements RouteContract
 {
+    /**
+     * Getting Route API
+     *
+     * @return \Closure
+     */
     public function apiRestorableResource()
     {
         return function ($name, $controller, array $options = []) {
-            $only = ['index', 'trashed', 'show', 'store', 'update', 'destroy', 'restore'];
-
-            if (isset($options['except'])) {
-                $only = array_diff($only, (array) $options['except']);
-            }
-
-            /** @var Router $router */
-            $router = $this;
-
-            return $router->resource(
-                $name,
-                $controller,
-                array_merge(compact('only'), $options)
-            );
+            return $this
+                ->getRouter()
+                ->resource($name, $controller, $this->options($options));
         };
+    }
+
+    /**
+     * Getting a list of allowed methods.
+     *
+     * @param array $options
+     *
+     * @return array
+     */
+    protected function filterMethods(array $options = [])
+    {
+        return isset($options['except'])
+            ? array_diff(static::API_METHODS, (array) $options['except'])
+            : static::API_METHODS;
+    }
+
+    protected function options(array $options = [])
+    {
+        return array_merge(
+            ['only' => $this->filterMethods($options)],
+            $options
+        );
+    }
+
+    /**
+     * Getting a Route Instance.
+     *
+     * @return \Illuminate\Routing\Router|\Helldar\ExtendedRoutes\Routing\RouterMixin
+     */
+    protected function getRouter()
+    {
+        return $this;
     }
 }
