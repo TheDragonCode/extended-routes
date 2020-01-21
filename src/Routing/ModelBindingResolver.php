@@ -10,7 +10,7 @@ use Illuminate\Support\Str;
 class ModelBindingResolver implements RouteContract
 {
     /**
-     * @var \Illuminate\Database\Eloquent\Model|\Illuminate\Database\Eloquent\Builder
+     * @var \Illuminate\Database\Eloquent\Builder|\Illuminate\Database\Eloquent\Model
      */
     private $model;
 
