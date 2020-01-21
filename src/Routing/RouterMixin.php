@@ -18,9 +18,7 @@ class RouterMixin
             /** @var Router $router */
             $router = $this;
 
-            return $router->resource($name, $controller, array_merge([
-                'only' => $only,
-            ], $options));
+            return $router->resource($name, $controller, array_merge(compact('only'), $options));
         };
     }
 }
