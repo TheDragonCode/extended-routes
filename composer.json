@@ -19,7 +19,7 @@
         }
     ],
     "require": {
-        "php": ">=5.6.9",
+        "php": "^5.6|^7.0",
         "illuminate/routing": "^5.4|^6.0|^7.0",
         "illuminate/support": "^5.4|^6.0|^7.0",
         "illuminate/database": "^5.4|^6.0|^7.0"
