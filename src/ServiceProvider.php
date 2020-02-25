@@ -36,6 +36,11 @@ class ServiceProvider extends RouteServiceProvider
      */
     protected function registerRouterMacro()
     {
-        Router::mixin(new RouterMixin());
+        Router::mixin($this->mixin());
+    }
+
+    protected function mixin()
+    {
+        return app(RouterMixin::class);
     }
 }
