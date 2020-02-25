@@ -7,7 +7,7 @@ use Helldar\ExtendedRoutes\Contracts\RouteContract;
 class RouterMixin
 {
     /**
-     * Getting Route API
+     * Getting Route API.
      *
      * @return \Closure
      */
