@@ -26,15 +26,12 @@ Instead, you may of course manually update your require block and run `composer 
 ```json
 {
     "require": {
-        "andrey-helldar/extended-routes": "^1.1"
+        "andrey-helldar/extended-routes": "^2.0"
     }
 }
 ```
 
-If you don't use auto-discovery, add the ServiceProvider to the `providers` array in `config/app.php`:
-```php
-Helldar\ExtendedRoutes\ServiceProvider::class,
-```
+For Laravel 5.4 - 6.x use `^1.0` version.
 
 
 ## Using
