@@ -46,10 +46,10 @@ class Page extends Model
 {
     use SoftDeletes;
 
-    public function resolveRouteBinding($value)
+    public function resolveRouteBinding($value, $field = null)
     {
         return (new ModelBindingResolver($this))
-            ->resolve($value);
+            ->resolve($value, $field);
     }
 }
 ```
