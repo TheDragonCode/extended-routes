@@ -10,13 +10,14 @@ trait SoftDeletesModel
     use SoftDeletes;
 
     /**
-     * @param $value
+     * @param mixed $value
+     * @param mixed $field
      *
      * @return \Illuminate\Database\Eloquent\Builder|\Illuminate\Database\Eloquent\Model|mixed|object|null
      */
-    public function resolveRouteBinding($value)
+    public function resolveRouteBinding($value, $field = null)
     {
         return app(ModelBindingResolver::class, $this)
-            ->resolve($value);
+            ->resolve($value, $field);
     }
 }
