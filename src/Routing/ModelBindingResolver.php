@@ -25,14 +25,15 @@ class ModelBindingResolver implements RouteContract
     }
 
     /**
-     * @param $value
+     * @param mixed $value
+     * @param mixed $field
      *
      * @return \Illuminate\Database\Eloquent\Builder|\Illuminate\Database\Eloquent\Model|mixed|object|null
      */
-    public function resolve($value)
+    public function resolve($value, $field = null)
     {
         return $this->model
-            ->where($this->model->getRouteKeyName(), $value)
+            ->where($field ?? $this->model->getRouteKeyName(), $value)
             ->when($this->needTrashed(), function ($query) {
                 $query->onlyTrashed();
             })
