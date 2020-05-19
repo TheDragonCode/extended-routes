@@ -17,7 +17,7 @@ trait SoftDeletesModel
      */
     public function resolveRouteBinding($value, $field = null)
     {
-        return app(ModelBindingResolver::class, $this)
+        return app(ModelBindingResolver::class, ['model' => $this])
             ->resolve($value, $field);
     }
 }
