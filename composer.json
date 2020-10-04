@@ -20,16 +20,16 @@
     ],
     "require": {
         "php": "^7.2",
-        "illuminate/routing": "^7.0",
-        "illuminate/support": "^7.0",
-        "illuminate/database": "^7.0"
+        "illuminate/routing": "^7.0|^8.0",
+        "illuminate/support": "^7.0|^8.0",
+        "illuminate/database": "^7.0|^8.0"
     },
     "suggest": {
         "symfony/thanks": "Give thanks (in the form of a GitHub) to your fellow PHP package maintainers"
     },
     "autoload": {
         "psr-4": {
-            "Helldar\\ExtendedRoutes\\": "src/"
+            "Helldar\\ExtendedRoutes\\": "src"
         }
     },
     "autoload-dev": {
