@@ -7,9 +7,9 @@ This helper extends the standard set of resource routing methods to work with So
 <p align="center">
     <a href="https://styleci.io/repos/138897572"><img src="https://styleci.io/repos/138897572/shield" alt="StyleCI" /></a>
     <a href="https://packagist.org/packages/andrey-helldar/extended-routes"><img src="https://img.shields.io/packagist/dt/andrey-helldar/extended-routes.svg?style=flat-square" alt="Total Downloads" /></a>
-    <a href="https://packagist.org/packages/andrey-helldar/extended-routes"><img src="https://poser.pugx.org/andrey-helldar/extended-routes/v/stable?format=flat-square" alt="Latest Stable Version" /></a>
-    <a href="https://packagist.org/packages/andrey-helldar/extended-routes"><img src="https://poser.pugx.org/andrey-helldar/extended-routes/v/unstable?format=flat-square" alt="Latest Unstable Version" /></a>
-    <a href="LICENSE"><img src="https://poser.pugx.org/andrey-helldar/extended-routes/license?format=flat-square" alt="License" /></a>
+    <a href="https://packagist.org/packages/andrey-helldar/extended-routes"><img src="https://img.shields.io/github/v/release/andrey-helldar/extended-routes?label=stable&style=flat-square" alt="Latest Stable Version" /></a>
+    <a href="https://packagist.org/packages/andrey-helldar/extended-routes"><img src="https://img.shields.io/badge/unstable-dev--master-orange?style=flat-square" alt="Latest Unstable Version" /></a>
+    <a href="LICENSE"><img src="https://img.shields.io/packagist/l/andrey-helldar/extended-routes.svg?style=flat-square" alt="License" /></a>
 </p>
 
 
