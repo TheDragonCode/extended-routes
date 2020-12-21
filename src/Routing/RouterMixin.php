@@ -29,7 +29,7 @@ class RouterMixin
     }
 
     /**
-     * @return \Illuminate\Routing\Router|\Helldar\ExtendedRoutes\Routing\RouterMixin
+     * @return \Helldar\ExtendedRoutes\Routing\RouterMixin|\Illuminate\Routing\Router
      */
     protected function getRouter(): Router
     {
