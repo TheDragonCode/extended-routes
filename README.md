@@ -66,6 +66,7 @@ class Foo extends SoftDeletesModel {
 ```
 
 or using trait:
+
 ```php
 use Helldar\ExtendedRoutes\Traits\SoftDeletesModel;
 //use Illuminate\Database\Eloquent\SoftDeletes; << need to remove conflicting trait.
@@ -94,7 +95,6 @@ Route::apiRestorableResource('foos', 'FoosController');
 | PUT/PATCH | api/foos/{foo}         | foos.update  | App\Http\Controllers\FoosController@update    | api |
 | DELETE    | api/foos/{foo}         | foos.destroy | App\Http\Controllers\FoosController@destroy   | api |
 | POST      | api/foos/{foo}/restore | foos.restore | App\Http\Controllers\FoosController@restore   | api |
-
 
 ## Copyright and License
 

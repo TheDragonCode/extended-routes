@@ -2,7 +2,7 @@
 
 namespace Helldar\ExtendedRoutes\Contracts;
 
-interface RouteContract
+interface Route
 {
     public const API_METHODS = ['index', 'trashed', 'show', 'store', 'update', 'destroy', 'restore'];
 

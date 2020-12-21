@@ -2,10 +2,10 @@
 
 namespace Helldar\ExtendedRoutes\Routing;
 
-use Helldar\ExtendedRoutes\Contracts\RouteContract;
+use Helldar\ExtendedRoutes\Contracts\Route;
 use Illuminate\Routing\ResourceRegistrar;
 
-class ExtendedResourceRegistrar extends ResourceRegistrar implements RouteContract
+class ExtendedResourceRegistrar extends ResourceRegistrar implements Route
 {
     /**
      * The default actions for a resourceful controller.
@@ -17,10 +17,10 @@ class ExtendedResourceRegistrar extends ResourceRegistrar implements RouteContra
     /**
      * Add the index method for a resourceful route.
      *
-     * @param string $name
-     * @param string $base
-     * @param string $controller
-     * @param array $options
+     * @param  string  $name
+     * @param  string  $base
+     * @param  string  $controller
+     * @param  array  $options
      *
      * @return \Illuminate\Routing\Route
      */
@@ -36,10 +36,10 @@ class ExtendedResourceRegistrar extends ResourceRegistrar implements RouteContra
     /**
      * Add the destroy method for a resourceful route.
      *
-     * @param string $name
-     * @param string $base
-     * @param string $controller
-     * @param array $options
+     * @param  string  $name
+     * @param  string  $base
+     * @param  string  $controller
+     * @param  array  $options
      *
      * @return \Illuminate\Routing\Route
      */

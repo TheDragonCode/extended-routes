@@ -2,8 +2,10 @@
 
 namespace Helldar\ExtendedRoutes\Routing;
 
-use Helldar\ExtendedRoutes\Contracts\RouteContract;
+use Helldar\ExtendedRoutes\Contracts\Route;
+use Illuminate\Routing\Router;
 
+/** @mixin \Illuminate\Routing\Router */
 class RouterMixin
 {
     /**
@@ -14,18 +16,23 @@ class RouterMixin
     public function apiRestorableResource()
     {
         return function ($name, $controller, array $options = []) {
-            /** @var \Illuminate\Routing\Router $router */
-            $router = $this;
-
             $only = isset($options['except'])
-                ? array_diff(RouteContract::API_METHODS, (array) $options['except'])
-                : RouteContract::API_METHODS;
+                ? array_diff(Route::API_METHODS, (array) $options['except'])
+                : Route::API_METHODS;
 
-            return $router->resource(
+            return $this->getRouter()->resource(
                 $name,
                 $controller,
                 array_merge(compact('only'), $options)
             );
         };
+    }
+
+    /**
+     * @return \Illuminate\Routing\Router|\Helldar\ExtendedRoutes\Routing\RouterMixin
+     */
+    protected function getRouter(): Router
+    {
+        return $this;
     }
 }

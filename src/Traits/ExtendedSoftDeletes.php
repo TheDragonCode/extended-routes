@@ -5,8 +5,7 @@ namespace Helldar\ExtendedRoutes\Traits;
 use Helldar\ExtendedRoutes\Routing\ModelBindingResolver;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-/** @deprecated Use the `Helldar\ExtendedRoutes\Traits\ExtendedSoftDeletes` instead */
-trait SoftDeletesModel
+trait ExtendedSoftDeletes
 {
     use SoftDeletes;
 

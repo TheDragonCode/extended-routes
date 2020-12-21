@@ -2,12 +2,12 @@
 
 namespace Helldar\ExtendedRoutes\Routing;
 
-use Helldar\ExtendedRoutes\Contracts\RouteContract;
+use Helldar\ExtendedRoutes\Contracts\Route;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Illuminate\Support\Str;
 
-class ModelBindingResolver implements RouteContract
+class ModelBindingResolver implements Route
 {
     /**
      * @var \Illuminate\Database\Eloquent\Builder|\Illuminate\Database\Eloquent\Model
@@ -17,7 +17,7 @@ class ModelBindingResolver implements RouteContract
     /**
      * ModelBindingResolver constructor.
      *
-     * @param Model $model
+     * @param  Model  $model
      */
     public function __construct($model)
     {
@@ -25,19 +25,18 @@ class ModelBindingResolver implements RouteContract
     }
 
     /**
-     * @param mixed $value
-     * @param mixed $field
+     * @param  mixed  $value
+     * @param  mixed  $field
      *
      * @return \Illuminate\Database\Eloquent\Builder|\Illuminate\Database\Eloquent\Model|mixed|object|null
      */
     public function resolve($value, $field = null)
     {
         return $this->model
-            ->where($field ?? $this->model->getRouteKeyName(), $value)
+            ->where($field ?: $this->model->getRouteKeyName(), $value)
             ->when($this->needTrashed(), function ($query) {
                 $query->onlyTrashed();
-            })
-            ->first();
+            })->first();
     }
 
     protected function needTrashed()

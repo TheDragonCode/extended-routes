@@ -34,13 +34,13 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\": "tests/"
+            "Tests\\": "tests"
         }
     },
     "config": {
         "preferred-install": "dist"
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "prefer-stable": true,
     "extra": {
         "laravel": {
