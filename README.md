@@ -6,6 +6,7 @@ This helper extends the standard set of resource routing methods to work with So
 
 <p align="center">
     <a href="https://styleci.io/repos/138897572"><img src="https://styleci.io/repos/138897572/shield" alt="StyleCI" /></a>
+    <a href="https://github.com/andrey-helldar/extended-routes/actions"><img src="https://img.shields.io/github/workflow/status/andrey-helldar/extended-routes/phpunit?style=flat-square" alt="Github Workflow Status" /></a>
     <a href="https://packagist.org/packages/andrey-helldar/extended-routes"><img src="https://img.shields.io/packagist/dt/andrey-helldar/extended-routes.svg?style=flat-square" alt="Total Downloads" /></a>
     <a href="https://packagist.org/packages/andrey-helldar/extended-routes"><img src="https://img.shields.io/github/v/release/andrey-helldar/extended-routes?label=stable&style=flat-square" alt="Latest Stable Version" /></a>
     <a href="https://packagist.org/packages/andrey-helldar/extended-routes"><img src="https://img.shields.io/badge/unstable-dev--master-orange?style=flat-square" alt="Latest Unstable Version" /></a>
