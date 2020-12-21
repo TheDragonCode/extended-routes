@@ -57,10 +57,11 @@ class Page extends Model
 or change extends of model:
 
 ```php
-use Helldar\ExtendedRoutes\Models\SoftDeletesModel;
+use Helldar\ExtendedRoutes\Models\ExtendedSoftDeletes;
 //use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Foo extends SoftDeletesModel {
+class Foo extends ExtendedSoftDeletes
+{
     //use SoftDeletes; << need to remove conflicting trait.
 }
 ```
@@ -68,11 +69,12 @@ class Foo extends SoftDeletesModel {
 or using trait:
 
 ```php
-use Helldar\ExtendedRoutes\Traits\SoftDeletesModel;
+use Helldar\ExtendedRoutes\Traits\ExtendedSoftDeletes;
 //use Illuminate\Database\Eloquent\SoftDeletes; << need to remove conflicting trait.
 
-class Foo extends Model {
-    use SoftDeletesModel;
+class Foo extends Model
+{
+    use ExtendedSoftDeletes;
 }
 ```
 
