@@ -99,7 +99,17 @@ Route::apiRestorableResource('foos', 'FoosController');
 | DELETE    | api/foos/{foo}         | foos.destroy | App\Http\Controllers\FoosController@destroy   | api |
 | POST      | api/foos/{foo}/restore | foos.restore | App\Http\Controllers\FoosController@restore   | api |
 
-## Copyright and License
+
+## License
+
+This package is licensed under the [MIT License](LICENSE).
 
 This package was written with the participation of [Maksim (Ellrion) Platonov](https://github.com/Ellrion/) under [MIT License](LICENSE).
+
+
+## For Enterprise
+
+Available as part of the Tidelift Subscription.
+
+The maintainers of `andrey-helldar/extended-routes` and thousands of other packages are working with Tidelift to deliver commercial support and maintenance for the open source packages you use to build your applications. Save time, reduce risk, and improve code health, while paying the maintainers of the exact packages you use. [Learn more](https://tidelift.com/subscription/pkg/packagist-andrey-helldar-extended-routes?utm_source=packagist-andrey-helldar-extended-routes&utm_medium=referral&utm_campaign=enterprise&utm_term=repo).
 
