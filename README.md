@@ -2,7 +2,7 @@
 
 This helper extends the standard set of resource routing methods to work with SoftDeletes and other extends.
 
-![extended routes](https://user-images.githubusercontent.com/10347617/42057776-0d4ad46a-7b27-11e8-88c9-36248498818c.png)
+<img src="https://preview.dragon-code.pro/TheDragonCode/extended-routes.svg?brand=laravel" width="100%" height="320" alt="Extended Routes"/>
 
 <p align="center">
     <a href="https://styleci.io/repos/138897572"><img src="https://styleci.io/repos/138897572/shield" alt="StyleCI" /></a>
