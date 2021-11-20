@@ -1,12 +1,12 @@
 {
-    "name": "andrey-helldar/extended-routes",
+    "name": "dragon-code/extended-routes",
     "description": "This helper extends the standard set of resource routing methods to work with SoftDeletes and other extends",
     "type": "library",
     "license": "MIT",
-    "keywords": ["extended routes", "resource", "routes", "router", "laravel"],
+    "keywords": ["extended routes", "resource", "routes", "router", "laravel", "dragon-code", "dragon", "andrey-helldar"],
     "support": {
-        "issues": "https://github.com/andrey-helldar/extended-routes/issues",
-        "source": "https://github.com/andrey-helldar/extended-routes"
+        "issues": "https://github.com/TheDragonCode/extended-routes/issues",
+        "source": "https://github.com/TheDragonCode/extended-routes"
     },
     "authors": [
         {
@@ -19,21 +19,18 @@
         }
     ],
     "require": {
-        "php": "^7.2.5|^8.0",
-        "illuminate/routing": "^7.30.4|^8.24",
-        "illuminate/support": "^7.30.4|^8.24",
-        "illuminate/database": "^7.30.4|^8.24"
+        "php": "^7.3|^8.0",
+        "illuminate/routing": "^7.0|^8.0",
+        "illuminate/support": "^7.0|^8.0",
+        "illuminate/database": "^7.0|^8.0"
     },
     "require-dev": {
         "orchestra/testbench": "^5.0|^6.0",
-        "phpunit/phpunit": "^8.0|^9.0"
-    },
-    "suggest": {
-        "symfony/thanks": "Give thanks (in the form of a GitHub) to your fellow PHP package maintainers"
+        "phpunit/phpunit": "^9.0"
     },
     "autoload": {
         "psr-4": {
-            "Helldar\\ExtendedRoutes\\": "src"
+            "DragonCode\\ExtendedRoutes\\": "src"
         }
     },
     "autoload-dev": {
@@ -49,7 +46,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Helldar\\ExtendedRoutes\\ServiceProvider"
+                "DragonCode\\ExtendedRoutes\\ServiceProvider"
             ]
         }
     }

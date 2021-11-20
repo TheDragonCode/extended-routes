@@ -1,8 +1,8 @@
 <?php
 
-namespace Helldar\ExtendedRoutes\Routing;
+namespace DragonCode\ExtendedRoutes\Routing;
 
-use Helldar\ExtendedRoutes\Contracts\Route;
+use DragonCode\ExtendedRoutes\Contracts\Route;
 use Illuminate\Routing\ResourceRegistrar;
 
 class ExtendedResourceRegistrar extends ResourceRegistrar implements Route

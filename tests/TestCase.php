@@ -2,13 +2,13 @@
 
 namespace Tests;
 
-use Helldar\ExtendedRoutes\ServiceProvider;
+use DragonCode\ExtendedRoutes\ServiceProvider;
 use Orchestra\Testbench\TestCase as BaseTestCase;
 use Tests\Fixtures\Controller;
 
 abstract class TestCase extends BaseTestCase
 {
-    protected function getPackageProviders($app)
+    protected function getPackageProviders($app): array
     {
         return [ServiceProvider::class];
     }

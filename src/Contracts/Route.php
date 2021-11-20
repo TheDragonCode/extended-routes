@@ -1,6 +1,6 @@
 <?php
 
-namespace Helldar\ExtendedRoutes\Contracts;
+namespace DragonCode\ExtendedRoutes\Contracts;
 
 interface Route
 {

@@ -5,7 +5,7 @@ namespace Tests\Features;
 use Illuminate\Support\Facades\Route;
 use Tests\TestCase;
 
-final class RoutesTest extends TestCase
+class RoutesTest extends TestCase
 {
     public function testNames()
     {

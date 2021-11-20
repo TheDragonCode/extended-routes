@@ -1,17 +1,14 @@
 ## Extended Routes
 
-This helper extends the standard set of resource routing methods to work with SoftDeletes and other extends.
-
 <img src="https://preview.dragon-code.pro/TheDragonCode/extended-routes.svg?brand=laravel" alt="Extended Routes"/>
 
-<p align="center">
-    <a href="https://styleci.io/repos/138897572"><img src="https://styleci.io/repos/138897572/shield" alt="StyleCI" /></a>
-    <a href="https://github.com/andrey-helldar/extended-routes/actions"><img src="https://img.shields.io/github/workflow/status/andrey-helldar/extended-routes/phpunit?style=flat-square" alt="Github Workflow Status" /></a>
-    <a href="https://packagist.org/packages/andrey-helldar/extended-routes"><img src="https://img.shields.io/packagist/dt/andrey-helldar/extended-routes.svg?style=flat-square" alt="Total Downloads" /></a>
-    <a href="https://packagist.org/packages/andrey-helldar/extended-routes"><img src="https://img.shields.io/github/v/release/andrey-helldar/extended-routes?label=stable&style=flat-square" alt="Latest Stable Version" /></a>
-    <a href="https://packagist.org/packages/andrey-helldar/extended-routes"><img src="https://img.shields.io/badge/unstable-dev--master-orange?style=flat-square" alt="Latest Unstable Version" /></a>
-    <a href="LICENSE"><img src="https://img.shields.io/packagist/l/andrey-helldar/extended-routes.svg?style=flat-square" alt="License" /></a>
-</p>
+[![Stable Version][badge_stable]][link_packagist]
+[![Unstable Version][badge_unstable]][link_packagist]
+[![Total Downloads][badge_downloads]][link_packagist]
+[![Github Workflow Status][badge_build]][link_build]
+[![License][badge_license]][link_license]
+
+> This helper extends the standard set of resource routing methods to work with SoftDeletes and other extends.
 
 
 ## Installation
@@ -19,7 +16,7 @@ This helper extends the standard set of resource routing methods to work with So
 To get the latest version of `Extended Routes`, simply require the project using [Composer](https://getcomposer.org):
 
 ```bash
-$ composer require andrey-helldar/extended-routes
+$ composer require dragon-code/extended-routes
 ```
 
 Instead, you may of course manually update your require block and run `composer update` if you so choose:
@@ -27,38 +24,36 @@ Instead, you may of course manually update your require block and run `composer 
 ```json
 {
     "require": {
-        "andrey-helldar/extended-routes": "^2.0"
+        "dragon-code/extended-routes": "^3.0"
     }
 }
 ```
 
-For Laravel 5.4 - 6.x use `^1.0` version.
+### Upgrade from `andrey-helldar/extended-routes`
 
+1. In your `composer.json` file, replace `"andrey-helldar/extended-routes": "^2.0"` with `"dragon-code/extended-routes": "^3.0"`.
+2. Replace the `Helldar\ExtendedRoutes` namespace prefix with `DragonCode\ExtendedRoutes` in your app;
+3. Run the `command composer` update.
+4. Profit!
 
 ## Using
 
-Add to BaseModel method
+### With trait
 
 ```php
-use Helldar\ExtendedRoutes\Routing\ModelBindingResolver;
-use Illuminate\Database\Eloquent\SoftDeletes;
+use DragonCode\ExtendedRoutes\Routing\ModelBindingResolver;
+use DragonCode\ExtendedRoutes\Traits\ExtendedSoftDeletes;
 
 class Page extends Model
 {
-    use SoftDeletes;
-
-    public function resolveRouteBinding($value, $field = null)
-    {
-        return (new ModelBindingResolver($this))
-            ->resolve($value, $field);
-    }
+    use ExtendedSoftDeletes;
 }
 ```
 
-or change extends of model:
+### Extends of the abstract model
 
 ```php
-use Helldar\ExtendedRoutes\Models\ExtendedSoftDeletes;
+use DragonCode\ExtendedRoutes\Models\ExtendedSoftDeletes;
 //use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Foo extends ExtendedSoftDeletes
@@ -67,19 +62,7 @@ class Foo extends ExtendedSoftDeletes
 }
 ```
 
-or using trait:
-
-```php
-use Helldar\ExtendedRoutes\Traits\ExtendedSoftDeletes;
-//use Illuminate\Database\Eloquent\SoftDeletes; << need to remove conflicting trait.
-
-class Foo extends Model
-{
-    use ExtendedSoftDeletes;
-}
-```
-
-and for some model Foo with SoftDeletes trait we can add routes:
+### Routes
 
 ```php
 app('router')->apiRestorableResource('foos', 'FoosController');
@@ -87,6 +70,18 @@ app('router')->apiRestorableResource('foos', 'FoosController');
 // or
 
 Route::apiRestorableResource('foos', 'FoosController');
+```
+
+Referencing is also available:
+
+```php
+use App\Http\Controllers\FoosController;
+
+app('router')->apiRestorableResource('foos', FoosController::class);
+
+// or
+
+Route::apiRestorableResource('foos', FoosController::class);
 ```
 
 | Method | URI | Name | Action | Middleware |
@@ -99,9 +94,25 @@ Route::apiRestorableResource('foos', 'FoosController');
 | DELETE    | api/foos/{foo}         | foos.destroy | App\Http\Controllers\FoosController@destroy   | api |
 | POST      | api/foos/{foo}/restore | foos.restore | App\Http\Controllers\FoosController@restore   | api |
 
-
 ## License
 
 This package is licensed under the [MIT License](LICENSE).
 
 This package was written with the participation of [Maksim (Ellrion) Platonov](https://github.com/Ellrion) under [MIT License](LICENSE).
+
+
+[badge_build]:          https://img.shields.io/github/workflow/status/TheDragonCode/extended-routes/phpunit?style=flat-square
+
+[badge_downloads]:      https://img.shields.io/packagist/dt/dragon-code/extended-routes.svg?style=flat-square
+
+[badge_license]:        https://img.shields.io/packagist/l/dragon-code/extended-routes.svg?style=flat-square
+
+[badge_stable]:         https://img.shields.io/github/v/release/TheDragonCode/extended-routes?label=stable&style=flat-square
+
+[badge_unstable]:       https://img.shields.io/badge/unstable-dev--main-orange?style=flat-square
+
+[link_build]:           https://github.com/TheDragonCode/extended-routes/actions
+
+[link_license]:         LICENSE
+
+[link_packagist]:       https://packagist.org/packages/dragon-code/extended-routes
