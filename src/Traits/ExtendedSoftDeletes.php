@@ -1,8 +1,8 @@
 <?php
 
-namespace Helldar\ExtendedRoutes\Traits;
+namespace DragonCode\ExtendedRoutes\Traits;
 
-use Helldar\ExtendedRoutes\Routing\ModelBindingResolver;
+use DragonCode\ExtendedRoutes\Routing\ModelBindingResolver;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 trait ExtendedSoftDeletes

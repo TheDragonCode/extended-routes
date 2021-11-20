@@ -1,8 +1,8 @@
 <?php
 
-namespace Helldar\ExtendedRoutes\Routing;
+namespace DragonCode\ExtendedRoutes\Routing;
 
-use Helldar\ExtendedRoutes\Contracts\Route;
+use DragonCode\ExtendedRoutes\Contracts\Route;
 
 /** @mixin \Illuminate\Routing\Router */
 class RouterMixin
@@ -15,7 +15,7 @@ class RouterMixin
     public function apiRestorableResource()
     {
         return function ($name, $controller, array $options = []) {
-            /** @var \Helldar\ExtendedRoutes\Routing\RouterMixin|\Illuminate\Routing\Router $router */
+            /** @var \DragonCode\ExtendedRoutes\Routing\RouterMixin|\Illuminate\Routing\Router $router */
             $router = $this;
 
             $only = isset($options['except'])

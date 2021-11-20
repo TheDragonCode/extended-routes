@@ -1,8 +1,8 @@
 <?php
 
-namespace Helldar\ExtendedRoutes\Models;
+namespace DragonCode\ExtendedRoutes\Models;
 
-use Helldar\ExtendedRoutes\Traits\ExtendedSoftDeletes as ExtendedSoftDeletesTrait;
+use DragonCode\ExtendedRoutes\Traits\ExtendedSoftDeletes as ExtendedSoftDeletesTrait;
 use Illuminate\Database\Eloquent\Model;
 
 abstract class ExtendedSoftDeletes extends Model
