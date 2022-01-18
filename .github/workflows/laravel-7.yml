@@ -1,17 +1,17 @@
-name: phpunit
+name: "Laravel 7"
 on: [ push ]
 
 jobs:
-    phpunit:
+    build:
         runs-on: ubuntu-latest
 
         strategy:
             fail-fast: true
             matrix:
                 php: [ "7.3", "7.4", "8.0" ]
-                laravel: [ "^7.0", "^8.0" ]
+                laravel: [ "7.0" ]
 
-        name: PHP ${{ matrix.php }}, Laravel ${{ matrix.laravel }}
+        name: PHP ${{ matrix.php }}
 
         steps:
             -   name: Checkout code
@@ -22,10 +22,10 @@ jobs:
                 with:
                     php-version: ${{ matrix.php }}
                     extensions: curl, mbstring, zip, pcntl, pdo, pdo_sqlite, iconv
-                    coverage: xdebug
+                    coverage: none
 
             -   name: Install dependencies
-                run: composer require --dev laravel/framework:${{ matrix.laravel }}
+                run: composer require --dev laravel/framework:^${{ matrix.laravel }}
 
             -   name: Execute tests
                 run: sudo vendor/bin/phpunit

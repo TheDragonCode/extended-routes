@@ -1,13 +1,18 @@
 {
     "name": "dragon-code/extended-routes",
     "description": "This helper extends the standard set of resource routing methods to work with SoftDeletes and other extends",
-    "type": "library",
     "license": "MIT",
-    "keywords": ["extended routes", "resource", "routes", "router", "laravel", "dragon-code", "dragon", "andrey-helldar"],
-    "support": {
-        "issues": "https://github.com/TheDragonCode/extended-routes/issues",
-        "source": "https://github.com/TheDragonCode/extended-routes"
-    },
+    "type": "library",
+    "keywords": [
+        "extended routes",
+        "resource",
+        "routes",
+        "router",
+        "laravel",
+        "dragon-code",
+        "dragon",
+        "andrey-helldar"
+    ],
     "authors": [
         {
             "name": "Andrey Helldar",
@@ -18,16 +23,22 @@
             "email": "ellrion11@gmail.com"
         }
     ],
+    "support": {
+        "issues": "https://github.com/TheDragonCode/extended-routes/issues",
+        "source": "https://github.com/TheDragonCode/extended-routes"
+    },
     "require": {
-        "php": "^7.3|^8.0",
-        "illuminate/routing": "^7.0|^8.0",
-        "illuminate/support": "^7.0|^8.0",
-        "illuminate/database": "^7.0|^8.0"
+        "php": "^7.3 || ^8.0",
+        "illuminate/database": "^7.0 || ^8.0 || ^9.0",
+        "illuminate/routing": "^7.0 || ^8.0 || ^9.0",
+        "illuminate/support": "^7.0 || ^8.0 || ^9.0"
     },
     "require-dev": {
-        "orchestra/testbench": "^5.0|^6.0",
+        "orchestra/testbench": "^5.0 || ^6.0 || ^7.0",
         "phpunit/phpunit": "^9.0"
     },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
     "autoload": {
         "psr-4": {
             "DragonCode\\ExtendedRoutes\\": "src"
@@ -41,8 +52,6 @@
     "config": {
         "preferred-install": "dist"
     },
-    "minimum-stability": "stable",
-    "prefer-stable": true,
     "extra": {
         "laravel": {
             "providers": [
