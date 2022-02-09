@@ -2,6 +2,7 @@
 
 namespace DragonCode\ExtendedRoutes\Routing;
 
+use Closure;
 use DragonCode\ExtendedRoutes\Contracts\Route;
 
 /** @mixin \Illuminate\Routing\Router */
@@ -10,7 +11,7 @@ class RouterMixin
     /**
      * Getting Route API.
      *
-     * @return \Closure
+     * @return Closure
      */
     public function apiRestorableResource()
     {

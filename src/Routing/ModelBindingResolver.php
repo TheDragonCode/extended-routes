@@ -9,15 +9,13 @@ use Illuminate\Support\Str;
 
 class ModelBindingResolver implements Route
 {
-    /**
-     * @var \Illuminate\Database\Eloquent\Builder|\Illuminate\Database\Eloquent\Model
-     */
+    /** @var \Illuminate\Database\Eloquent\Builder|\Illuminate\Database\Eloquent\Model */
     private $model;
 
     /**
      * ModelBindingResolver constructor.
      *
-     * @param  Model  $model
+     * @param Model $model
      */
     public function __construct($model)
     {
@@ -25,8 +23,8 @@ class ModelBindingResolver implements Route
     }
 
     /**
-     * @param  mixed  $value
-     * @param  mixed  $field
+     * @param mixed $value
+     * @param mixed $field
      *
      * @return \Illuminate\Database\Eloquent\Builder|\Illuminate\Database\Eloquent\Model|mixed|object|null
      */

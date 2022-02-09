@@ -17,10 +17,10 @@ class ExtendedResourceRegistrar extends ResourceRegistrar implements Route
     /**
      * Add the index method for a resourceful route.
      *
-     * @param  string  $name
-     * @param  string  $base
-     * @param  string  $controller
-     * @param  array  $options
+     * @param string $name
+     * @param string $base
+     * @param string $controller
+     * @param array $options
      *
      * @return \Illuminate\Routing\Route
      */
@@ -36,10 +36,10 @@ class ExtendedResourceRegistrar extends ResourceRegistrar implements Route
     /**
      * Add the destroy method for a resourceful route.
      *
-     * @param  string  $name
-     * @param  string  $base
-     * @param  string  $controller
-     * @param  array  $options
+     * @param string $name
+     * @param string $base
+     * @param string $controller
+     * @param array $options
      *
      * @return \Illuminate\Routing\Route
      */
