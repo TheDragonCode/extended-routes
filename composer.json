@@ -50,12 +50,12 @@
         }
     },
     "config": {
-        "preferred-install": "dist",
         "allow-plugins": {
             "dragon-code/codestyler": true,
             "ergebnis/composer-normalize": true,
             "friendsofphp/php-cs-fixer": true
-        }
+        },
+        "preferred-install": "dist"
     },
     "extra": {
         "laravel": {
