@@ -28,6 +28,24 @@
         "issues": "https://github.com/TheDragonCode/extended-routes/issues",
         "source": "https://github.com/TheDragonCode/extended-routes"
     },
+    "funding": [
+        {
+            "type": "github",
+            "url": "https://github.com/sponsors/TheDragonCode"
+        },
+        {
+            "type": "open_collective",
+            "url": "https://opencollective.com/dragon-code"
+        },
+        {
+            "type": "boosty",
+            "url": "https://boosty.to/dragon-code"
+        },
+        {
+            "type": "yoomoney",
+            "url": "https://yoomoney.ru/to/410012608840929"
+        }
+    ],
     "require": {
         "php": "^7.3 || ^8.0",
         "illuminate/database": "^7.0 || ^8.0 || ^9.0",
