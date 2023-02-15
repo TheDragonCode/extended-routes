@@ -101,7 +101,7 @@ This package is licensed under the [MIT License](LICENSE).
 This package was written with the participation of [Maksim (Ellrion) Platonov](https://github.com/Ellrion) under [MIT License](LICENSE).
 
 
-[badge_build]:          https://img.shields.io/github/workflow/status/TheDragonCode/extended-routes/phpunit?style=flat-square
+[badge_build]:          https://img.shields.io/github/actions/workflow/status/TheDragonCode/extended-routes/phpunit.yml?style=flat-square
 
 [badge_downloads]:      https://img.shields.io/packagist/dt/dragon-code/extended-routes.svg?style=flat-square
 
