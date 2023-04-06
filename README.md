@@ -1,4 +1,4 @@
-## Extended Routes
+## Extended Routes for Laravel
 
 <img src="https://preview.dragon-code.pro/TheDragonCode/extended-routes.svg?brand=laravel" alt="Extended Routes"/>
 
