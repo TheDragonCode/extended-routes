@@ -10,9 +10,6 @@ trait ExtendedSoftDeletes
     use SoftDeletes;
 
     /**
-     * @param mixed $value
-     * @param mixed $field
-     *
      * @return \Illuminate\Database\Eloquent\Builder|\Illuminate\Database\Eloquent\Model|mixed|object|null
      */
     public function resolveRouteBinding($value, $field = null)

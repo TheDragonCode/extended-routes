@@ -15,7 +15,7 @@ class ModelBindingResolver implements Route
     /**
      * ModelBindingResolver constructor.
      *
-     * @param Model $model
+     * @param  Model  $model
      */
     public function __construct($model)
     {
@@ -23,9 +23,6 @@ class ModelBindingResolver implements Route
     }
 
     /**
-     * @param mixed $value
-     * @param mixed $field
-     *
      * @return \Illuminate\Database\Eloquent\Builder|\Illuminate\Database\Eloquent\Model|mixed|object|null
      */
     public function resolve($value, $field = null)
