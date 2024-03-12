@@ -13,6 +13,14 @@
 
 ## Installation
 
+### Compatibility
+
+| Laravel     | PHP                     | Extended Routes Version |
+|-------------|-------------------------|-------------------------|
+| 7, 8, 9, 10 | 7.3, 7.4, 8.0, 8.1, 8.2 | `^3.0`                  |
+| 10, 11      | 8.1, 8.2, 8.3           | `^4.0`                  |
+
+
 To get the latest version of `Extended Routes`, simply require the project using [Composer](https://getcomposer.org):
 
 ```bash
@@ -24,7 +32,7 @@ Instead, you may of course manually update your require block and run `composer 
 ```json
 {
     "require": {
-        "dragon-code/extended-routes": "^3.1"
+        "dragon-code/extended-routes": "^4.0"
     }
 }
 ```
